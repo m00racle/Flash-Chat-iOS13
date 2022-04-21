@@ -32,6 +32,8 @@ class Flash_Chat_iOS13UITests: XCTestCase {
         // action:
         app.buttons["Log In"].tap()
         // assert:
+        // wait for 3 seconds to make sure all views are loaded:
+        _ = XCTWaiter.wait(for: [expectation(description: "log in test waits")], timeout: 3.0)
         XCTAssertTrue(app.textFields["Email"].exists)
         XCTAssertTrue(app.secureTextFields["Password"].exists)
         XCTAssertTrue(app/*@START_MENU_TOKEN@*/.staticTexts["Log In"]/*[[".buttons[\"Log In\"].staticTexts[\"Log In\"]",".staticTexts[\"Log In\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists)
@@ -44,7 +46,9 @@ class Flash_Chat_iOS13UITests: XCTestCase {
         
         registerStaticText.tap()
         
-        //assert
+        //assert:
+        // wait for 3 seconds to make sure all views are loaded:
+        _ = XCTWaiter.wait(for: [expectation(description: "Register test waits")], timeout: 3.0)
         XCTAssertTrue(app.textFields["Email"].exists)
         XCTAssertTrue(app.secureTextFields["Password"].exists)
         XCTAssertTrue(app.buttons["Register"].exists)
