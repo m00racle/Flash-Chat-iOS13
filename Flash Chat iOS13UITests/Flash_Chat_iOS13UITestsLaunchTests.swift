@@ -30,4 +30,5 @@ class Flash_Chat_iOS13UITestsLaunchTests: XCTestCase {
         attachment.lifetime = .keepAlways
         add(attachment)
     }
+    
 }
