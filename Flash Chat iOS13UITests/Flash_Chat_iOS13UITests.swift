@@ -26,6 +26,16 @@ class Flash_Chat_iOS13UITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
+    func testWelcomeScreen() throws {
+        // TEST if the welcome text exist after some dalays due to animation
+        let app = XCUIApplication()
+//        app.launch()
+        let welcomeText = app.staticTexts["⚡️FlashChat"]
+        
+        //assert:
+        XCTAssertTrue(welcomeText.waitForExistence(timeout: 1.0))
+    }
+    
     func testPressLoginButtonGoesToLoginPage() throws {
         // prepare:
         let app = XCUIApplication()
