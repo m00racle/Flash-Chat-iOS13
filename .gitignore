@@ -89,3 +89,6 @@ fastlane/test_output
 
 iOSInjectionProject/
 
+# Google Services (ex. APIs and Firebase)
+**/GoogleService-Info.plist
+GoogleService-Info.plist
