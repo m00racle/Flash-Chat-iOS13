@@ -8,5 +8,9 @@ target 'Flash Chat iOS13' do
   # Pods for Flash Chat iOS13
 
   pod 'CLTypingLabel'
-
+  
+  # use Firebase Authentication and Cloud Firestore
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+  
 end
