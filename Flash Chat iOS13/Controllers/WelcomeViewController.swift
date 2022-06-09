@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CLTypingLabel
 
 class WelcomeViewController: UIViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: CLTypingLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,19 +19,10 @@ class WelcomeViewController: UIViewController {
         // put the titleText to empty first
         titleLabel.text = ""
         let welcomeText = "⚡️FlashChat"
-        var delayMultiplier = 0.0
-        //Algorithm start:
-        // use for in loop to loop each letter(symbol) in the welcomeText
-        for letter in welcomeText {
-            // put delay timer to each symbol to append to the titleLabel: UILabel
-            Timer.scheduledTimer(withTimeInterval: 0.2*delayMultiplier, repeats: false, block: {(timer) in self.titleLabel.text?.append(letter)})
-            // note UILabel text is a String type which has instance method append(c: char)
-            // use this method to put each typed letter (after delay) to the titleLabel.text
-            
-            // increment multiplier to give delay to the next symbol
-            delayMultiplier += 1
-        }
-        
+        titleLabel.charInterval = 0.09
+        // the default of char interval was 0.1 s but I want it to be a bit faster
+        // but I still tested it in 1s interval to wait before the whole welcome text appears
+        titleLabel.text = welcomeText
        
     }
     
